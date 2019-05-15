@@ -1,0 +1,31 @@
+{
+  "name": "vue-config",
+  "version": "1.0.0",
+  "description": "config plugin for Vue",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rollup --config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiangshanmeta/vue-config.git"
+  },
+  "keywords": [
+    "vue",
+    "config",
+    "plugin"
+  ],
+  "author": "jiangshanmeta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jiangshanmeta/vue-config/issues"
+  },
+  "homepage": "https://github.com/jiangshanmeta/vue-config#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "rollup": "^1.11.3",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-node-resolve": "^4.2.4"
+  }
+}
