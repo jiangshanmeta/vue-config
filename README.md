@@ -14,9 +14,9 @@ npm install --save vue-configs
 
 ```js
 import Vue from 'vue'
-import vueConfig from 'vue-config'
+import vueConfigs from 'vue-configs'
 
-Vue.use(vueConfig)
+Vue.use(vueConfigs)
 ```
 
 ## Usage example
@@ -66,7 +66,7 @@ the example above shows it also supports getter mode.
 the default option we use is **config** , we can use different keys:
 
 ```js
-Vue.use(VueConfig,{
+Vue.use(vueConfigs,{
     optionKeys:['config','staticMethod']
 })
 ```
