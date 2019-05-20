@@ -9,7 +9,7 @@ In orde to handle this problem,we can use vue-config plugin.
 ## Install
 
 ```sh
-npm install --save vue-config
+npm install --save vue-configs
 ```
 
 ```js
