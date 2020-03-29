@@ -18,12 +18,28 @@
     return _typeof(obj);
   }
 
+  function mergeStrategy(toVal, fromVal) {
+    if (!toVal) {
+      return fromVal;
+    }
+
+    if (!fromVal) {
+      return toVal;
+    }
+
+    Object.defineProperties(toVal, Object.getOwnPropertyDescriptors(fromVal));
+    return toVal;
+  }
+
   var index = {
     install: function install(Vue) {
       var _ref = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {},
           _ref$optionKeys = _ref.optionKeys,
           optionKeys = _ref$optionKeys === void 0 ? ['config'] : _ref$optionKeys;
 
+      optionKeys.forEach(function (optionKey) {
+        Vue.config.optionMergeStrategies[optionKey] = mergeStrategy;
+      });
       Vue.mixin({
         beforeCreate: function beforeCreate() {
           var _this = this;
@@ -35,20 +51,7 @@
               return;
             }
 
-            Object.keys(config).forEach(function (key) {
-              var descriptor = Object.getOwnPropertyDescriptor(config, key);
-
-              if (descriptor.get) {
-                Object.defineProperty(_this, key, {
-                  get: descriptor.get
-                });
-              } else {
-                Object.defineProperty(_this, key, {
-                  value: config[key],
-                  writable: true
-                });
-              }
-            });
+            Object.defineProperties(_this, Object.getOwnPropertyDescriptors(config));
           });
         }
       });
