@@ -1,10 +1,6 @@
 export default {
     install(Vue,{optionKeys=['config']}={}){
 
-        optionKeys.forEach((optionKey)=>{
-            Vue.config.optionMergeStrategies[optionKey] = Vue.config.optionMergeStrategies.computed;
-        });
-
         Vue.mixin({
             beforeCreate(){
                 optionKeys.forEach((optionKey)=>{

@@ -24,9 +24,6 @@
           _ref$optionKeys = _ref.optionKeys,
           optionKeys = _ref$optionKeys === void 0 ? ['config'] : _ref$optionKeys;
 
-      optionKeys.forEach(function (optionKey) {
-        Vue.config.optionMergeStrategies[optionKey] = Vue.config.optionMergeStrategies.computed;
-      });
       Vue.mixin({
         beforeCreate: function beforeCreate() {
           var _this = this;
