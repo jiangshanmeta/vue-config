@@ -27,8 +27,10 @@
       return toVal;
     }
 
-    Object.defineProperties(toVal, Object.getOwnPropertyDescriptors(fromVal));
-    return toVal;
+    var target = Object.create(null);
+    Object.defineProperties(target, Object.getOwnPropertyDescriptors(toVal));
+    Object.defineProperties(target, Object.getOwnPropertyDescriptors(fromVal));
+    return target;
   }
 
   var index = {

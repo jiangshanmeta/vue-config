@@ -1,6 +1,6 @@
 {
   "name": "vue-configs",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "config plugin for Vue",
   "main": "dist/index.js",
   "scripts": {

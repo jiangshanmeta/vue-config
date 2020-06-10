@@ -5,8 +5,10 @@ function mergeStrategy (toVal, fromVal) {
     if (!fromVal) {
         return toVal;
     }
-    Object.defineProperties(toVal, Object.getOwnPropertyDescriptors(fromVal));
-    return toVal;
+    const target = Object.create(null);
+    Object.defineProperties(target, Object.getOwnPropertyDescriptors(toVal));
+    Object.defineProperties(target, Object.getOwnPropertyDescriptors(fromVal));
+    return target;
 }
 
 export default {
